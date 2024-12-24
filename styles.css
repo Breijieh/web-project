@@ -558,7 +558,7 @@ section.hero::after {
 .slide:hover,
 .slide:focus {
     cursor: pointer;
-    box-shadow: inset 9em 0 0 0 var(--color-primary);
+    box-shadow: inset 10em 0 0 0 var(--color-primary);
 }
 
 .offset {
@@ -580,7 +580,6 @@ button {
     font: inherit;
     font-weight: 700;
     line-height: 1;
-    margin: 0.5em;
     padding: 1em 2em;
     color: var(--color);
     transition: 0.25s;
@@ -1049,12 +1048,10 @@ input#search-bar:focus:-ms-placeholder {
 
 @media (max-width: 600px) {
 
-    /* Make the cart container stack vertically */
     .cart-container {
         flex-direction: column;
     }
 
-    /* Hide table headers and restructure as "cards" */
     .cart-table thead {
         display: none;
     }
@@ -1101,5 +1098,110 @@ input#search-bar:focus:-ms-placeholder {
     .cart-summary {
         max-width: 100%;
         margin-left: 0;
+    }
+}
+
+.product-page img {
+    display: block;
+    object-fit: cover;
+    width: 50%;
+    height: 450px;
+}
+
+
+
+#highlight {
+    color: #333;
+    /* formerly $black */
+    font-size: 1.125rem;
+    text-transform: uppercase;
+}
+
+.price {
+    margin: 0;
+}
+
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 1rem 0 0 0;
+    list-style: none;
+}
+
+.breadcrumb-list li {
+    font-size: 0.85rem;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+.breadcrumb-item.active {
+    color: #333;
+}
+
+
+/* Product Description */
+.description {
+    border-top: 0.0625rem solid #e3dddd;
+    /* formerly $gray */
+    margin: 2rem 0;
+    padding: 1rem 0 0 0;
+}
+
+
+.product-page button {
+    width: fit-content;
+}
+
+.product-page .product {
+    display: flex;
+    gap: 1rem;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-height: 600px;
+    width: 700px;
+}
+
+.product-page main .container {
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+}
+
+.product-page .product .product-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+.product-page input {
+    width: 100px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 400px) {
+    .product-page .product {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-page main .container {
+        padding: 20px 10px;
+
+    }
+
+    .product-page .product img {
+        width: 100%;
     }
 }

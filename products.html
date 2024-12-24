@@ -4,33 +4,22 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - BORJ</title>
 
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
 
-    <title>Product - BORJ</title>
-
-    <!-- Your main stylesheet -->
     <link rel="stylesheet" href="styles.css" />
-
-    <!-- Load main.js first (contains the products array) -->
-    <script src="main.js" defer></script>
-
-    <!-- Load script that dynamically populates this page -->
-    <script src="product-page.js" defer></script>
 </head>
 
-<body class="product-page">
+<body>
     <div id="toastBox"></div>
 
     <header class="header">
@@ -40,46 +29,43 @@
                 <i class="fa-solid fa-bars" id="bars"></i>
                 <ul id="nav-list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Product</a></li>
+                    <li class="link-active"><a href="products.html">Product</a></li>
                     <li><a href="about.html">About us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
-            <div class="nav-icons">
-                <a href="cart.html">
+            <div class="nav-icons"><a href="cart.html">
                     <span id="number-cart">3</span>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </a>
+                    <i class="fa-solid fa-cart-shopping"></i></a>
             </div>
         </div>
     </header>
-
-    <main>
+    <section class="section product-listing">
         <div class="container">
-            <div class="grid product">
+            <h2 class="section-title">Our Products</h2>
 
-                <!-- We will dynamically set this image -->
-                <img id="product-image" class="active" src="" alt="Product Image" />
+            <div class="sort-search-container">
+                <div class="sort-container">
+                    <select id="sort-select">
+                        <option value="none"> Sort By: </option>
+                        <option value="titleAsc">Name: A to Z</option>
+                        <option value="titleDesc">Name: Z to A</option>
+                        <option value="priceAsc">Price: Low to High</option>
+                        <option value="priceDesc">Price: High to Low</option>
+                    </select>
+                </div>
 
-                <div class="product-text">
-                    <!-- We will dynamically insert the product name here -->
-                    <h1 id="product-title"></h1>
-
-                    <!-- We will dynamically insert the price here -->
-                    <h2 id="product-price"></h2>
-
-                    <div class="description">
-                        <!-- We will dynamically insert the product description here -->
-                        <p id="product-description"></p>
-                    </div>
-
-                    <label for="quantity">Quantity:</label>
-                    <input type="number" min="1" value="1" id="quantity" />
-                    <button class="add-to-cart slide">Add To Cart</button>
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search about our perfumes" />
+                    <a href="#">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </a>
                 </div>
             </div>
+
+            <div class="product-grid"></div>
         </div>
-    </main>
+    </section>
 
     <footer class="footer">
         <div class="container footer-container">
@@ -94,7 +80,7 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">Products</a></li>
+                    <li><a href="product.html">Products</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
@@ -119,6 +105,8 @@
             <p>&copy; 2024 BORJ. All rights reserved. | Terms & Conditions | Privacy Policy</p>
         </div>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 
 </html>

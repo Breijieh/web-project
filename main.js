@@ -1,13 +1,20 @@
+/************************************************
+   MAIN.JS
+   - Loads product.json via AJAX
+   - Fills the global allProductsData array
+   - Dispatches "allProductsDataLoaded" event
+   - Renders product listing (if on listing page)
+   - Renders cart (if on cart page), etc.
+*************************************************/
+
 let allProductsData = [];
 
+// Toast Notification Box
 let toastBox = document.getElementById("toastBox");
 let successMsg =
   '<i class="fa-solid fa-circle-check"></i> Added to cart successfully';
 
-/**
- * Display a toast notification
- * @param {string} msg - The message to display
- */
+// Display a toast notification
 function showToast(msg) {
   if (!toastBox) return;
   let toast = document.createElement("div");
@@ -19,29 +26,25 @@ function showToast(msg) {
   }, 3000);
 }
 
-/** Retrieve the cart array from localStorage */
+// Retrieve the cart array from localStorage
 function getCart() {
   let cart = localStorage.getItem("cart");
   return cart ? JSON.parse(cart) : [];
 }
 
-/** Update localStorage with the new cart array */
+// Update localStorage with the new cart array
 function setCart(cartArray) {
   localStorage.setItem("cart", JSON.stringify(cartArray));
 }
 
-/** Update the cart count badge in the header */
+// Update the cart count badge in the header
 function updateCartCount() {
   let cart = getCart();
   let totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
   $("#number-cart").text(totalQuantity);
 }
 
-/**
- * Add a product to the cart
- * @param {Object} perfume - The product object
- * @param {number} quantity - Quantity to add
- */
+// Add a product to the cart
 function addToCart(perfume, quantity = 1) {
   let cart = getCart();
 
@@ -49,7 +52,7 @@ function addToCart(perfume, quantity = 1) {
   if (existingItem) {
     existingItem.quantity += quantity;
   } else {
-    cart.push({ ...perfume, quantity: quantity });
+    cart.push({ ...perfume, quantity });
   }
 
   setCart(cart);
@@ -57,7 +60,7 @@ function addToCart(perfume, quantity = 1) {
   showToast(successMsg);
 }
 
-/** Generate HTML for the price section */
+// Generate HTML for the price section
 function createPriceHTML(price, salePrice) {
   if (salePrice) {
     return `
@@ -70,13 +73,16 @@ function createPriceHTML(price, salePrice) {
   return `<div class="price">$${price.toFixed(2)}</div>`;
 }
 
-/** Generate HTML for a single product card */
+// Generate HTML for a single product card (listing)
 function createProductCard(perfume) {
   const priceHTML = createPriceHTML(perfume.price, perfume.sale_price);
   return `
     <figure class="snip1418 hover">
       <div class="card-image-container">
-        <img src="images/${perfume.image_id}" alt="${perfume.title}" />
+        <!-- Clicking this link takes the user to product.html with the product ID -->
+        <a href="product.html?id=${perfume.id}">
+          <img src="images/${perfume.image_id}" alt="${perfume.title}" />
+        </a>
       </div>
       <div class="add-to-cart" data-id="${perfume.id}">
         <i class="fa-solid fa-cart-plus"></i>
@@ -91,11 +97,7 @@ function createProductCard(perfume) {
   `;
 }
 
-/**
- * Populate all products into a specified container
- * @param {Array} productsArray - Array of product objects
- * @param {string} containerSelector - jQuery selector for the container
- */
+// Populate all products into a specified container (for listing pages)
 function populateAllProducts(productsArray, containerSelector) {
   const $container = $(containerSelector);
   $container.empty();
@@ -106,11 +108,7 @@ function populateAllProducts(productsArray, containerSelector) {
   });
 }
 
-/**
- * Populate category-based products into a specified container
- * @param {Array} perfumes - Array of product objects
- * @param {string} containerSelector - jQuery selector for the container
- */
+// Populate category-based products into a specified container (home page sections)
 function populateCategory(perfumes, containerSelector) {
   const $container = $(containerSelector);
   $container.empty();
@@ -121,16 +119,14 @@ function populateCategory(perfumes, containerSelector) {
   });
 }
 
-/**
- * Render the cart page by populating the table with cart items
- */
+// Render the cart page
 function renderCartPage() {
   let cart = getCart();
   const $cartTableBody = $(".cart-table tbody");
   const $subtotal = $("#subtotal");
   const $total = $("#total");
 
-  if (!$cartTableBody.length) return;
+  if (!$cartTableBody.length) return; // Not on cart page
 
   $cartTableBody.empty();
 
@@ -168,6 +164,7 @@ function renderCartPage() {
   $subtotal.text(`$${subtotalValue.toFixed(2)}`);
   $total.text(`$${(subtotalValue + shippingCost).toFixed(2)}`);
 
+  // Remove item
   $(".remove-item")
     .off("click")
     .on("click", function (e) {
@@ -182,6 +179,7 @@ function renderCartPage() {
       updateCartCount();
     });
 
+  // Change quantity
   $(".quantity-input")
     .off("change")
     .on("change", function () {
@@ -200,12 +198,7 @@ function renderCartPage() {
     });
 }
 
-/**
- * Sort products based on sortType
- * @param {Array} products - The array of product objects
- * @param {string} sortType - The type of sorting (titleAsc, titleDesc, priceAsc, priceDesc, etc.)
- * @returns {Array} A new sorted array (or the same array if no sort selected)
- */
+// Sort products by chosen sortType
 function sortProducts(products, sortType) {
   let sorted = [...products];
 
@@ -236,42 +229,58 @@ function sortProducts(products, sortType) {
   return sorted;
 }
 
+// On Document Ready
 $(document).ready(function () {
   updateCartCount();
 
+  // 1. Fetch product data from JSON (asynchronously)
   $.ajax({
-    url: "product.json",
+    url: "product.json", // Make sure this path is correct
     dataType: "json",
     success: function (data) {
+      // 2. Store all products in the global array
       allProductsData = data.all;
 
+      // 3. Dispatch event so product-page.js can know data is loaded
+      document.dispatchEvent(new CustomEvent("allProductsDataLoaded"));
+
+      // 4. For the listing pages (if .product-listing is present)
       if ($(".product-listing .product-grid").length) {
         let currentSearchTerm = "";
         let currentSortType = "none";
 
         function renderProducts() {
-          const filtered = allProductsData.filter((perfume) => {
-            return perfume.title.toLowerCase().includes(currentSearchTerm);
-          });
+          // Filter
+          const filtered = allProductsData.filter((perfume) =>
+            perfume.title.toLowerCase().includes(currentSearchTerm)
+          );
 
+          // Sort
           const finalArray = sortProducts(filtered, currentSortType);
 
+          // Populate
           populateAllProducts(finalArray, ".product-listing .product-grid");
         }
 
+        // Initial render
         renderProducts();
 
+        // Search
         $("#search-bar").on("input", function () {
           currentSearchTerm = $(this).val().toLowerCase();
           renderProducts();
         });
 
+        // Sorting
         $("#sort-select").on("change", function () {
           currentSortType = $(this).val();
           renderProducts();
         });
       }
 
+      // 5. Home page sections
+      // e.g. .new-arrivals, .best-selling, .blog-posts
+      // If the elements exist, populate them
       if ($(".new-arrivals .product-grid").length) {
         let newArrivalsCat = data.categories.find((cat) => cat.id === 2);
         if (newArrivalsCat) {
@@ -281,7 +290,6 @@ $(document).ready(function () {
           );
         }
       }
-
       if ($(".best-selling .product-grid").length) {
         let bestSellingCat = data.categories.find((cat) => cat.id === 3);
         if (bestSellingCat) {
@@ -291,7 +299,6 @@ $(document).ready(function () {
           );
         }
       }
-
       if ($(".blog-posts .blog-grid").length) {
         let classicCat = data.categories.find((cat) => cat.id === 1);
         if (classicCat) {
@@ -299,6 +306,7 @@ $(document).ready(function () {
         }
       }
 
+      // 6. Cart page
       if ($(".cart-table").length) {
         renderCartPage();
       }
@@ -308,22 +316,19 @@ $(document).ready(function () {
     },
   });
 
+  // Handle "Add to Cart" clicks
   $(document).on("click", ".add-to-cart", function () {
     const perfumeId = parseInt($(this).data("id"), 10);
-
     const foundPerfume = allProductsData.find((p) => p.id === perfumeId);
     if (!foundPerfume) {
       console.warn("Perfume not found in allProductsData, skipping addToCart");
       return;
     }
-
     addToCart(foundPerfume, 1);
   });
 
-  function menuToggle() {
-    $("#bars").click(function () {
-      $("#nav-list").toggleClass("active");
-    });
-  }
-  menuToggle();
+  // Mobile menu toggle
+  $("#bars").on("click", function () {
+    $("#nav-list").toggleClass("active");
+  });
 });
