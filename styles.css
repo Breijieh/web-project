@@ -444,11 +444,13 @@ section.hero::after {
 
 .snip1418:hover {
     transform: translateY(-20px);
+    cursor: pointer;
 }
 
 .snip1418 * {
     box-sizing: border-box;
     transition: all 0.3s ease-out;
+    cursor: pointer;
 }
 
 .card-image-container {
