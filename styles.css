@@ -439,6 +439,7 @@ section.hero::after {
     transform: translateZ(0);
     perspective: 20em;
     transition: all 0.3s;
+    cursor: pointer;
 }
 
 .snip1418:hover {
