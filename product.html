@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products - BORJ</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="toastBox"></div>
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo header-font"><a href="index.html">BORJ</a></div>
+            <nav class="nav-links">
+                <i class="fa-solid fa-bars" id="bars"></i>
+                <ul id="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="link-active"><a href="product.html">Product</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons"><a href="cart.html">
+                    <span id="number-cart">3</span>
+                    <i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </header>
+    <section class="section product-listing">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+
+            <div class="sort-search-container">
+                <div class="sort-container">
+                    <select id="sort-select">
+                        <option value="none"> Sort By: </option>
+                        <option value="titleAsc">Name: A to Z</option>
+                        <option value="titleDesc">Name: Z to A</option>
+                        <option value="priceAsc">Price: Low to High</option>
+                        <option value="priceDesc">Price: High to Low</option>
+                    </select>
+                </div>
+
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search about our perfumes" />
+                    <a href="#">
+                        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="product-grid"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>BORJ</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Quisque non odio molestie, tincidunt dui a, fermentum arcu.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help & FAQ</h4>
+                <ul>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>123 AL-Masssra, AL-Massara Kingdom, 7oct</p>
+                <p>Email: dont_email_me@BORJ.com</p>
+                <p>Phone: +972 021 021 201</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BORJ. All rights reserved. | Terms & Conditions | Privacy Policy</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

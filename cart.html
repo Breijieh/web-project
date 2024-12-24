@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart - BORJ</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="toastBox"></div>
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo header-font"><a href="index.html">BORJ</a></div>
+            <nav class="nav-links">
+                <i class="fa-solid fa-bars" id="bars"></i>
+                <ul id="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons"><a href="cart.html">
+                    <span id="number-cart">3</span>
+                    <i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="section cart-section">
+        <div class="container">
+            <h2 class="section-title">Your Cart</h2>
+            <div class="cart-container">
+                <table class="cart-table">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Cart items will be dynamically inserted here by main.js -->
+                    </tbody>
+                </table>
+
+                <div class="cart-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-details">
+                        <div class="summary-item">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">$0.00</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Shipping:</span>
+                            <span>$10.00</span>
+                        </div>
+                        <div class="summary-item total">
+                            <span>Total:</span>
+                            <span id="total">$10.00</span>
+                        </div>
+                    </div>
+                    <div class="cart-actions">
+                        <a href="product.html" class="btn continue-shopping">Continue Shopping</a>
+                        <a href="checkout.html" class="btn proceed-checkout">Buy Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>BORJ</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Quisque non odio molestie, tincidunt dui a, fermentum arcu.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help & FAQ</h4>
+                <ul>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>123 AL-Masssra, AL-Massara Kingdom, 7oct</p>
+                <p>Email: dont_email_me@BORJ.com</p>
+                <p>Phone: +972 021 021 201</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BORJ. All rights reserved. | Terms & Conditions | Privacy Policy</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+
+            function showToast(message, iconClass = 'fa-check-circle') {
+                const toast = $(`
+                <div class="toast">
+                    <i class="fa-solid ${iconClass}"></i>
+                    <span>${message}</span>
+                </div>
+            `);
+                $('#toastBox').append(toast);
+
+                setTimeout(() => {
+                    toast.fadeOut(500, () => {
+                        toast.remove();
+                    });
+                }, 3000);
+            }
+
+            $('.proceed-checkout').on('click', function (e) {
+                e.preventDefault();
+
+                localStorage.removeItem('cart');
+                $('#number-cart').text('0');
+                $('.cart-table tbody').empty();
+
+                $('#subtotal').text('$0.00');
+                $('#total').text('$10.00');
+
+                showToast('You have buy successfully', 'fa-check-circle');
+
+                setTimeout(() => {
+                }, 1500);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

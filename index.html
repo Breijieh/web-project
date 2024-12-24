@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrjPer (Home)</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div id="toastBox"></div>
+
+    <header class="header">
+        <div class="container nav-container">
+            <div class="logo header-font"><a href="index.html">BORJ</a></div>
+            <nav class="nav-links">
+                <i class="fa-solid fa-bars" id="bars"></i>
+                <ul id="nav-list">
+                    <li class="link-active"><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-icons"><a href="cart.html">
+                    <span id="number-cart">3</span>
+                    <i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero section">
+        <div class="container hero-content">
+            <h1 class="header-font">BORJ SHOP</h1>
+            <p class="hero-subtitle">
+                Welcome to our shop, Discover the latest in perfumes.
+            </p>
+        </div>
+    </section>
+
+    <!-- Info Boxes -->
+    <section class="info-section section">
+        <div class="container info-container">
+            <div class="info-box">
+                <i class="fa-solid fa-truck-fast"></i>
+                <h4>Book An Appointment</h4>
+                <p>Schedule your visit at any of our stores.</p>
+            </div>
+            <div class="info-box">
+                <i class="fa-solid fa-globe"></i>
+                <h4>Pick Up In Store</h4>
+                <p>Order online and collect at your convenience.</p>
+            </div>
+            <div class="info-box">
+                <i class="fa-solid fa-people-group"></i>
+                <h4>Special Packaging</h4>
+                <p>We wrap your items beautifully for gifts.</p>
+            </div>
+            <div class="info-box">
+                <i class="fa-solid fa-thumbs-up"></i>
+                <h4>Free Global Returns</h4>
+                <p>Hassle-free returns across the globe.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our New Arrivals -->
+    <section class="section new-arrivals">
+        <div class="container">
+            <h2 class="section-title">Our New Arrivals</h2>
+            <!-- Empty grid for dynamic insertion -->
+            <div class="product-grid">
+                <!-- JavaScript will append product cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Classic Winter Collection (Static) -->
+    <section class="section winter-collection">
+        <div class="container winter-wrapper">
+            <div class="winter-text header-font">
+                <h2>Classic Winter Collection</h2>
+                <p>
+                    Dive into our latest selection of outerwear and knits.
+                    Tuck into cozy coats, essential sweaters, and refined layering pieces
+                    crafted with warmth and style in mind.
+                </p>
+                <a href="product.html"><button class="slide"> Shop Now</button></a>
+            </div>
+            <div class="winter-image">
+                <img src="images/winter.jpg" alt="Winter Collection Image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Best Selling Items -->
+    <section class="section best-selling">
+        <div class="container">
+            <h2 class="section-title">Best Selling Perfumes</h2>
+            <!-- Empty grid for dynamic insertion -->
+            <div class="product-grid">
+                <!-- JavaScript will append product cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Classic Perfumes -->
+    <section class="section blog-posts">
+        <div class="container">
+            <h2 class="section-title">Classic Perfumes</h2>
+            <!-- We'll reuse the .blog-grid class for these items -->
+            <div class="blog-grid">
+                <!-- JavaScript will append product cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h3>BORJ</h3>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Quisque non odio molestie, tincidunt dui a, fermentum arcu.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Help & FAQ</h4>
+                <ul>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <p>123 AL-Masssra, AL-Massara Kingdom, 7oct</p>
+                <p>Email: dont_email_me@BORJ.com</p>
+                <p>Phone: +972 021 021 201</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 BORJ. All rights reserved. | Terms & Conditions | Privacy Policy</p>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,536 @@
+{
+  "all": [
+    {
+      "id": 1,
+      "title": "Amber Sunrise",
+      "description": "An invigorating blend of citrus and amber, capturing the warmth of dawn.",
+      "price": 59.99,
+      "image_id": "image1.jpg",
+      "stock": 10,
+      "ratings": 4.0,
+      "brand": "Amber",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "title": "Crystal Petals",
+      "description": "Soft floral notes with a hint of musk, perfect for everyday wear.",
+      "price": 69.50,
+      "sale_price": 62.50,
+      "image_id": "image2.jpg",
+      "stock": 12,
+      "ratings": 4.1,
+      "brand": "PetalCraft",
+      "quantity": 1
+    },
+    {
+      "id": 3,
+      "title": "Velvet Haven",
+      "description": "A luxurious combination of white flowers and vanilla, exuding quiet elegance.",
+      "price": 72.00,
+      "image_id": "image3.jpg",
+      "stock": 15,
+      "ratings": 4.2,
+      "brand": "VelvetSky",
+      "quantity": 1
+    },
+    {
+      "id": 4,
+      "title": "Moonlit Blossom",
+      "description": "Delicate jasmine and bergamot, reminiscent of a moonlit garden.",
+      "price": 82.50,
+      "sale_price": 75.00,
+      "image_id": "image4.jpg",
+      "stock": 8,
+      "ratings": 4.3,
+      "brand": "MoonLit",
+      "quantity": 1
+    },
+    {
+      "id": 5,
+      "title": "Ocean Whisper",
+      "description": "Refreshing oceanic aroma with subtle hints of sea salt and driftwood.",
+      "price": 88.00,
+      "image_id": "image5.jpg",
+      "stock": 20,
+      "ratings": 4.4,
+      "brand": "OceanMist",
+      "quantity": 1
+    },
+    {
+      "id": 6,
+      "title": "Serenity Garden",
+      "description": "Floral undertones with crisp green notes, evoking a tranquil garden.",
+      "price": 65.00,
+      "image_id": "image6.jpg",
+      "stock": 25,
+      "ratings": 4.0,
+      "brand": "Gardenia",
+      "quantity": 1
+    },
+    {
+      "id": 7,
+      "title": "Desert Bloom",
+      "description": "A seductive blend of desert flowers and rare spices.",
+      "price": 78.99,
+      "sale_price": 70.00,
+      "image_id": "image7.jpg",
+      "stock": 10,
+      "ratings": 4.5,
+      "brand": "DesertRose",
+      "quantity": 1
+    },
+    {
+      "id": 8,
+      "title": "Nocturne Dream",
+      "description": "Deep and alluring, with dark orchid and amber infusions.",
+      "price": 92.00,
+      "image_id": "image8.jpg",
+      "stock": 5,
+      "ratings": 4.6,
+      "brand": "Nocturne",
+      "quantity": 1
+    },
+    {
+      "id": 9,
+      "title": "Golden Heritage",
+      "description": "An opulent fragrance of rich amber and aged woods.",
+      "price": 99.99,
+      "image_id": "image9.jpg",
+      "stock": 7,
+      "ratings": 4.2,
+      "brand": "HeritageGold",
+      "quantity": 1
+    },
+    {
+      "id": 10,
+      "title": "Floral Breeze",
+      "description": "A playful blend of fresh blooms and bright citrus notes.",
+      "price": 58.99,
+      "sale_price": 50.99,
+      "image_id": "image10.jpg",
+      "stock": 14,
+      "ratings": 4.0,
+      "brand": "FloraWave",
+      "quantity": 1
+    },
+    {
+      "id": 11,
+      "title": "Vintage Lily",
+      "description": "Classic lily with a modern twist, featuring soft musk and sandalwood.",
+      "price": 66.99,
+      "sale_price": 60.00,
+      "image_id": "image11.jpg",
+      "stock": 12,
+      "ratings": 4.1,
+      "brand": "LilyHeritage",
+      "quantity": 1
+    },
+    {
+      "id": 12,
+      "title": "Majestic Pine",
+      "description": "Captures the essence of pine forests with gentle floral top notes.",
+      "price": 75.00,
+      "image_id": "image12.jpg",
+      "stock": 15,
+      "ratings": 4.3,
+      "brand": "Majestic",
+      "quantity": 1
+    },
+    {
+      "id": 13,
+      "title": "Scarlet Rose",
+      "description": "Bold red roses enriched with hints of patchouli, perfect for romantic nights.",
+      "price": 90.00,
+      "image_id": "image13.jpg",
+      "stock": 9,
+      "ratings": 4.3,
+      "brand": "ScarletBloom",
+      "quantity": 1
+    },
+    {
+      "id": 14,
+      "title": "Opulent Spice",
+      "description": "Luxurious spices and warm accords for an elevated evening.",
+      "price": 98.99,
+      "image_id": "image14.jpg",
+      "stock": 16,
+      "ratings": 4.4,
+      "brand": "Opulence",
+      "quantity": 1
+    },
+    {
+      "id": 15,
+      "title": "Sunlit Bloom",
+      "description": "Bright citrus and neroli bring a burst of sunshine to any day.",
+      "price": 110.00,
+      "sale_price": 99.00,
+      "image_id": "image15.jpg",
+      "stock": 11,
+      "ratings": 4.2,
+      "brand": "Sunlite",
+      "quantity": 1
+    },
+    {
+      "id": 16,
+      "title": "Regal Nights",
+      "description": "Refined notes of oakmoss and cedar, capturing regal elegance.",
+      "price": 120.00,
+      "image_id": "image16.jpg",
+      "stock": 6,
+      "ratings": 4.5,
+      "brand": "Regalis",
+      "quantity": 1
+    },
+    {
+      "id": 17,
+      "title": "Jade Dream",
+      "description": "Green tea and verbena for a refreshing, uplifting aroma.",
+      "price": 59.99,
+      "image_id": "image17.jpg",
+      "stock": 10,
+      "ratings": 4.0,
+      "brand": "GreenJade",
+      "quantity": 1
+    },
+    {
+      "id": 18,
+      "title": "Lavender Fields",
+      "description": "Soothing lavender with a sweet vanilla undertone.",
+      "price": 69.99,
+      "sale_price": 62.99,
+      "image_id": "image18.jpg",
+      "stock": 12,
+      "ratings": 4.1,
+      "brand": "LavenderFields",
+      "quantity": 1
+    },
+    {
+      "id": 19,
+      "title": "Summer Twilight",
+      "description": "Hints of musk and orchid evoke the calm serenity of dusk.",
+      "price": 76.00,
+      "image_id": "image19.jpg",
+      "stock": 15,
+      "ratings": 4.2,
+      "brand": "Twilight",
+      "quantity": 1
+    },
+    {
+      "id": 20,
+      "title": "Frosted Mint",
+      "description": "Cool mint and eucalyptus add a frosty twist to a floral base.",
+      "price": 84.50,
+      "image_id": "image20.jpg",
+      "stock": 8,
+      "ratings": 4.3,
+      "brand": "FrostBreeze",
+      "quantity": 1
+    },
+    {
+      "id": 21,
+      "title": "Whispering Woods",
+      "description": "Enchanting forest aroma with earthy pine and subtle floral notes.",
+      "price": 89.00,
+      "image_id": "image21.jpg",
+      "stock": 20,
+      "ratings": 4.4,
+      "brand": "Woodland",
+      "quantity": 1
+    },
+    {
+      "id": 22,
+      "title": "Tropical Sunset",
+      "description": "A vibrant burst of tropical fruits paired with gentle coconut cream.",
+      "price": 60.00,
+      "sale_price": 54.00,
+      "image_id": "image22.jpg",
+      "stock": 25,
+      "ratings": 4.0,
+      "brand": "Tropica",
+      "quantity": 1
+    },
+    {
+      "id": 23,
+      "title": "Crimson Velvet",
+      "description": "Velvety red berries balanced by a touch of fresh greenery.",
+      "price": 78.00,
+      "image_id": "image23.jpg",
+      "stock": 10,
+      "ratings": 4.5,
+      "brand": "Velour",
+      "quantity": 1
+    },
+    {
+      "id": 24,
+      "title": "Midnight Ember",
+      "description": "Smoky incense and sweet tonka bean, capturing the allure of midnight.",
+      "price": 94.50,
+      "image_id": "image24.jpg",
+      "stock": 5,
+      "ratings": 4.6,
+      "brand": "MidnightFire",
+      "quantity": 1
+    },
+    {
+      "id": 25,
+      "title": "Dewy Petals",
+      "description": "Dew-kissed florals that sparkle with citrus, reminiscent of spring mornings.",
+      "price": 92.99,
+      "sale_price": 82.99,
+      "image_id": "image25.jpg",
+      "stock": 7,
+      "ratings": 4.2,
+      "brand": "MorningDew",
+      "quantity": 1
+    },
+    {
+      "id": 26,
+      "title": "Sandalwood Bliss",
+      "description": "A calming synergy of sandalwood and white musk.",
+      "price": 58.99,
+      "image_id": "image26.jpg",
+      "stock": 14,
+      "ratings": 4.0,
+      "brand": "SandalAura",
+      "quantity": 1
+    },
+    {
+      "id": 27,
+      "title": "Peachy Glow",
+      "description": "Juicy peach with subtle florals, an ode to youthful radiance.",
+      "price": 66.99,
+      "image_id": "image27.jpg",
+      "stock": 12,
+      "ratings": 4.1,
+      "brand": "PeachBlush",
+      "quantity": 1
+    },
+    {
+      "id": 28,
+      "title": "Citrus Shine",
+      "description": "A bright explosion of grapefruit and tangerine with soft floral undertones.",
+      "price": 73.50,
+      "image_id": "image28.jpg",
+      "stock": 15,
+      "ratings": 4.3,
+      "brand": "CitrusShine",
+      "quantity": 1
+    },
+    {
+      "id": 29,
+      "title": "Rosewood Aura",
+      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+      "price": 89.00,
+      "sale_price": 79.00,
+      "image_id": "image29.jpg",
+      "stock": 9,
+      "ratings": 4.3,
+      "brand": "RosewoodEcho",
+      "quantity": 1
+    },
+    {
+      "id": 30,
+      "title": "Musk Serenity",
+      "description": "A smooth musk base topped with delicate hints of lavender.",
+      "price": 95.99,
+      "image_id": "image30.jpg",
+      "stock": 16,
+      "ratings": 4.4,
+      "brand": "MuskSerenity",
+      "quantity": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Classic Perfumes",
+      "perfumes": [
+        {
+          "id": 1,
+          "title": "Amber Sunrise",
+          "price": 59.99,
+          "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "image_id": "image1.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "title": "Crystal Petals",
+          "price": 69.50,      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "sale_price": 62.50,
+          "image_id": "image2.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 3,
+          "title": "Velvet Haven",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 72.00,
+          "image_id": "image3.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 4,
+          "title": "Moonlit Blossom",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 82.50,
+          "sale_price": 75.00,
+          "image_id": "image4.jpg",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Our New Arrivals",
+      "perfumes": [
+        {
+          "id": 6,
+          "title": "Serenity Garden",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 65.00,
+          "image_id": "image6.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 7,
+          "title": "Desert Bloom",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 78.99,
+          "sale_price": 70.00,
+          "image_id": "image7.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 8,
+          "title": "Nocturne Dream",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 92.00,
+          "image_id": "image8.jpg",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Best Selling Perfumes",
+      "perfumes": [
+        {
+          "id": 9,
+          "title": "Golden Heritage",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 99.99,
+          "image_id": "image9.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 10,
+          "title": "Floral Breeze",
+          "price": 58.99,
+          "sale_price": 50.99,
+          "image_id": "image10.jpg",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "quantity": 1
+        },
+        {
+          "id": 11,
+          "title": "Vintage Lily",
+          "price": 66.99,
+          "sale_price": 60.00,
+          "image_id": "image11.jpg",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "quantity": 1
+        },
+        {
+          "id": 12,
+          "title": "Majestic Pine",
+          "price": 75.00,
+          "image_id": "image12.jpg",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Limited Editions",
+      "perfumes": [
+        {
+          "id": 13,
+          "title": "Scarlet Rose",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 90.00,
+          "image_id": "image13.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 14,
+          "title": "Opulent Spice",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 98.99,
+          "image_id": "image14.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 15,
+          "title": "Sunlit Bloom",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 110.00,
+          "sale_price": 99.00,
+          "image_id": "image15.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 16,
+          "title": "Regal Nights",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 120.00,
+          "image_id": "image16.jpg",
+          "quantity": 1
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Seasonal Perfumes",
+      "perfumes": [
+        {
+          "id": 17,
+          "title": "Jade Dream",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 59.99,
+          "image_id": "image17.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 18,
+          "title": "Lavender Fields",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 69.99,
+          "sale_price": 62.99,
+          "image_id": "image18.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 19,
+          "title": "Summer Twilight",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 76.00,
+          "image_id": "image19.jpg",
+          "quantity": 1
+        },
+        {
+          "id": 20,
+          "title": "Frosted Mint",      "description": "Rosewood and vanilla create a warm, intimate fragrance.",
+
+          "price": 84.50,
+          "image_id": "image20.jpg",
+          "quantity": 1
+        }
+      ]
+    }
+  ]
+}
